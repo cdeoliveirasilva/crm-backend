@@ -1,0 +1,21 @@
+Restful APIs:
+- Use HTTP protocols to do transactions with a back-end
+- Use GET, POST, PUT and DLETE calls to the back-end
+- Interact with endpoints created on the back-end, 
+responds with sucess/failure with data 
+
+>> GET gets the data
+>> POST adds new data
+>> PUT updates data
+>> DELETE deletes data
+
+
+**  body-parser dependency: parse json http request into server and makes sure it's running preperly
+
+** change of script: 
+"scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js"
+
+>> allows to run server and make sure that babel transpiles the code before it runs it
+
+
