@@ -24,3 +24,13 @@ export const getContacts = (req, res) => {
     res.json(contact);
   });
 };
+
+export const getContactWithID = (req, res) => {
+  // save new contact to database
+  Contact.findById(req.params.contactID, (err, contact) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(contact);
+  });
+};
