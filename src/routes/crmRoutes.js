@@ -1,4 +1,24 @@
-import { addNewContact } from "../controlers/crmControler";
+import { addNewContact, getContacts } from "../controlers/crmControler";
+
+const routes = (app) => {
+  app
+    .route("/contact")
+    .get(getContacts)
+
+    .post(addNewContact);
+
+  app
+    .route("/contact/:contactID")
+    .put((req, res) => res.send("PUT request succesful!")) //updates specific ID
+
+    .delete((req, res) => res.send("DELETE request succesful!"));
+};
+
+export default routes;
+
+/** (How did you get here again?)
+
+import { addNewContact, getContacts } from "../controlers/crmControler";
 
 const routes = (app) => {
   app
@@ -16,12 +36,5 @@ const routes = (app) => {
     )
 
     .post(addNewContact);
-
-  app
-    .route("/contact/:contactID")
-    .put((req, res) => res.send("PUT request succesful!")) //updates specific ID
-
-    .delete((req, res) => res.send("DELETE request succesful!"));
-};
-
-export default routes;
+(...)
+ */
