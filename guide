@@ -10,7 +10,8 @@ responds with sucess/failure with data
 >> DELETE deletes data
 
 
-**  body-parser dependency: parse json http request into server and makes sure it's running preperly
+**  body-parser dependency: parse json http request into server and makes sure 
+it's running preperly
 
 ** change of script: 
 "scripts": {
@@ -19,3 +20,10 @@ responds with sucess/failure with data
 >> allows to run server and make sure that babel transpiles the code before it runs it
 
 
+** Middleware
+Functions that have access to the request and response object in an express application, 
+and can run their code there. It can make changes to the request response objects, end end them,
+can call another function in the stack using next, etc.
+
+The middleware performs some specific function on the HTTP request or response at a 
+specific stage in the HTTP pipeline before or after the user defined controller. 

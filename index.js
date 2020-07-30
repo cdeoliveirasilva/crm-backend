@@ -2,7 +2,7 @@ import express from "express";
 import routes from "./src/routes/crmRoutes";
 
 const app = express();
-const PORT = 8000;
+const PORT = 9000;
 
 routes(app);
 
