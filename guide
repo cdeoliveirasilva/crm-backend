@@ -1,4 +1,4 @@
-Restful APIs:
+// Restful APIs
 - Use HTTP protocols to do transactions with a back-end
 - Use GET, POST, PUT and DLETE calls to the back-end
 - Interact with endpoints created on the back-end, 
@@ -27,3 +27,12 @@ can call another function in the stack using next, etc.
 
 The middleware performs some specific function on the HTTP request or response at a 
 specific stage in the HTTP pipeline before or after the user defined controller. 
+
+
+// MongoDB
+- A MongoDB database is one big object containing collections
+- Collections have documents or objects (in this case my contacts)
+- Inside each documents you have the data with key-value pairs or arrays of items/data
+
+Mongo allows you to set a schema for a collection and predefine what each key-value 
+pair takes as type (i.e., first name of contact contains a string)
