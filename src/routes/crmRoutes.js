@@ -3,23 +3,33 @@ import {
   getContacts,
   getContactWithID,
   updateContact,
+  deleteContact,
 } from "../controlers/crmControler";
 
 const routes = (app) => {
   app
     .route("/contact")
-    .get(getContacts)
+    .get((req, res, next) => {
+      // middelware
+      console.log(`Request from: ${req.originalUrl}`);
+      console.log(`Request from: ${req.method}`);
+      next();
+    }, getContacts)
 
+    // POST endpoint
     .post(addNewContact);
 
   app
     .route("/contact/:contactID")
 
+    // get a specific contact
     .get(getContactWithID)
 
-    .put(updateContact) //updates specific ID
+    // update a specific contact
+    .put(updateContact)
 
-    .delete((req, res) => res.send("DELETE request succesful!"));
+    // delete a specific contact
+    .delete(deleteContact);
 };
 
 export default routes;

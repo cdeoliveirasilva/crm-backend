@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 
 const app = express();
-const PORT = 2200;
+const PORT = 2400;
 
 // mongoose connection
 mongoose.Promise = global.Promise; // waits for res while connecting to MongoDB
@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routes(app);
+
+// serve static files
+app.use(express.static("public"));
 
 app.get("/", (req, res) =>
   res.send(`Node and express server running on port ${PORT}`)

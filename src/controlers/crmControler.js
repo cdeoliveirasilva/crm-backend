@@ -16,7 +16,6 @@ export const addNewContact = (req, res) => {
 };
 
 export const getContacts = (req, res) => {
-  // save new contact to database
   Contact.find({}, (err, contact) => {
     if (err) {
       res.send(err);
@@ -26,7 +25,7 @@ export const getContacts = (req, res) => {
 };
 
 export const getContactWithID = (req, res) => {
-  // save new contact to database
+  // find contact by id in database
   Contact.findById(req.params.contactID, (err, contact) => {
     if (err) {
       res.send(err);
@@ -36,7 +35,7 @@ export const getContactWithID = (req, res) => {
 };
 
 export const updateContact = (req, res) => {
-  // save new contact to database
+  // updates contact in database
   Contact.findOneAndUpdate(
     { _id: req.params.contactID },
     req.body,
@@ -48,4 +47,15 @@ export const updateContact = (req, res) => {
       res.json(contact);
     }
   );
+};
+
+export const deleteContact = (req, res) => {
+  // delete contact from database
+  Contact.remove({ _id: req.params.contactID }, (err, contact) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json({ message: "Succesfully deleted contact" });
+    // res.json(contact); >> can't pass a deleted contact, so you pass an object with a key (in this case, a message)
+  });
 };
